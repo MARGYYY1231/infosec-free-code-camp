@@ -13,7 +13,7 @@ const timeInSeconds = ninetyDaysInSeconds;
 app.use(helmet.hsts({maxAge: timeInSeconds, force: true}));
 
 app.use(helmet.dnsPrefetchControl());
-
+app.use(helmet.noCache());
 
 
 
