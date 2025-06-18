@@ -15,7 +15,11 @@ app.use(helmet.hsts({maxAge: timeInSeconds, force: true}));
 app.use(helmet.dnsPrefetchControl());
 app.use(helmet.noCache());
 
-
+let directives = {
+  defaultSrc: ["'self'"],
+  scriptSrc: ["'self'", 'trusted-cdn.com']
+};
+app.use(helmet.contentSecurityPolicy(directives));
 
 
 
